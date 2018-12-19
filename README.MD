@@ -1,0 +1,52 @@
+# Andromeda Library
+
+The Andromeda Library provides you access to the APIs included in the [Andromeda Server][andromeda-play-store]. This library is made specifically to work with Kotlin - it technically will work with Java, but not pleasantly.
+
+# Usage
+
+Add the permission to your app's manifest:
+```xml
+<uses-permission android:name="projekt.andromeda.permission.ACCESS_API" />
+```
+
+Request for explicit permission on an activity:
+```kotlin
+requestPermissions(
+      arrayOf(AndromedaClient.ACCESS_PERMISSION),
+      ANDROMEDA_REQUEST_CODE_PERMISSION
+)
+```
+
+Initialize the the app to use the APIs:
+```kotlin
+AndromedaClient.initialize(this)
+```
+
+You're set! From here you can call any methods from `Andromeda*` classes.
+
+There is an example app (`:example`) to check/play with. Also checkout the full documentation [here][doc].
+
+# Download
+
+Get the AAR binary [here][lib-release-url] and put it inside your app's module `libs` directory. Then setup the dependencies:
+```groovy
+repositories {
+  flatDir { dirs 'libs' }
+}
+dependencies {
+  implementation (name:'lib-andromeda', ext: 'aar')
+}
+```
+
+If you have a Java-only project, add the following to your project:
+```groovy
+dependencies {
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+}
+```
+
+[andromeda-play-store]: <https://play.google.com/store/apps/details?id=projekt.andromeda>
+[lib-release-url]: <https://github.com/prjkt-io/lib-andromeda/releases>
+[doc]: <https://docs.prjkt.io/lib-andromeda/>
