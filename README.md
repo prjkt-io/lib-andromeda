@@ -2,12 +2,26 @@
 
 The Andromeda Library provides you access to the APIs included in the [Andromeda Server][andromeda-play-store]. This library is made specifically to work with Kotlin - it technically will work with Java, but not pleasantly.
 
-# Usage
+# Installation
+[![](https://jitpack.io/v/prjkt-io/lib-andromeda.svg)](https://jitpack.io/#prjkt-io/lib-andromeda)
 
-Add the permission to your app's manifest:
-```xml
-<uses-permission android:name="projekt.andromeda.permission.ACCESS_API" />
+Add in your root `build.gradle` at the end of repositories
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
+
+Add the dependency to your project `build.gradle`
+```groovy
+dependencies {
+    implementation 'com.github.prjkt-io:lib-andromeda:[latest_version]'
+}
+```
+
+# Usage
 
 Request for explicit permission on an activity:
 ```kotlin
@@ -26,27 +40,5 @@ You're set! From here you can call any methods from `Andromeda*` classes.
 
 There is an example app (`:example`) to check/play with. Also checkout the full documentation [here][doc].
 
-# Download
-
-Get the AAR binary [here][lib-release-url] and put it inside your app's module `libs` directory. Then setup the dependencies:
-```groovy
-repositories {
-  flatDir { dirs 'libs' }
-}
-dependencies {
-  implementation (name:'lib-andromeda', ext: 'aar')
-}
-```
-
-If you have a Java-only project, add the following to your project:
-```groovy
-dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
-}
-```
-
 [andromeda-play-store]: <https://play.google.com/store/apps/details?id=projekt.andromeda>
-[lib-release-url]: <https://github.com/prjkt-io/lib-andromeda/releases>
 [doc]: <https://docs.prjkt.io/lib-andromeda/>

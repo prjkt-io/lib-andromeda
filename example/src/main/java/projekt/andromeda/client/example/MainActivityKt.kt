@@ -1,8 +1,7 @@
-package projekt.andromedaclientexample.java
+package projekt.andromeda.client.example
 
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity

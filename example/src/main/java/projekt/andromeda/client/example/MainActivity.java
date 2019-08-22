@@ -1,10 +1,9 @@
-package projekt.andromedaclientexample.java;
+package projekt.andromeda.client.example;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import projekt.andromeda.client.AndromedaClient;
-import projekt.andromeda.client.AndromedaInput;
 import projekt.andromeda.client.AndromedaStatusBar;
 
 import android.content.DialogInterface;
