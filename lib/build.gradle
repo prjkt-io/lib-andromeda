@@ -20,13 +20,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutines_version"
 }
 
-project.ext {
-    mavDevelopers = ["Pr":"Projekt"]
-    mavSiteUrl = "https://github.com/prjkt-io/lib-andromeda"
-    mavGitUrl = mavSiteUrl + '.git'
-    mavProjectName = 'lib-andromeda'
-    mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
-    mavLibraryDescription = "Provides you access to the APIs included in the Andromeda Server"
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
 }
-
-apply from: 'https://raw.githubusercontent.com/sky-uk/gradle-maven-plugin/master/gradle-mavenizer.gradle'
